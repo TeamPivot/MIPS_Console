@@ -1,0 +1,14 @@
+Net "clk" LOC="B8";
+
+Net "clk" IOSTANDARD = LVCMOS33;
+
+## System level constraints
+Net "clk" TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD "sys_clk_pin" 20000 ps;
+
+Net "stopped_led" LOC="C11" | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 8;
+
+#J5
+	#IO1
+	Net "stopped" LOC ="T13" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+	

@@ -1,0 +1,7 @@
+verilog work "RegisterFile.v"
+verilog work "InstructionMemory.v"
+verilog work "Flags.v"
+verilog work "DataMemory.v"
+verilog work "ControlUnit.v"
+verilog work "ALU.v"
+verilog work "CPU.v"

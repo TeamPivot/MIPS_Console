@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/nimer/Documents/GitHub/MIPS16/FPGA/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/nimer/Documents/GitHub/MIPS16/FPGA/xst"
+elaborate
+-ifn CPU.prj
+-ifmt mixed

@@ -1,0 +1,989 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 5 -n
+3 -fastpaths -xml Main.twx Main.ncd -o Main.twr Main.pcf -ucf Main.ucf
+
+Design file:              Main.ncd
+Physical constraint file: Main.pcf
+Device,package,speed:     xc3s500e,ft256,-5 (PRODUCTION 1.27 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 20 ns HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1784 paths analyzed, 29 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  10.347ns.
+--------------------------------------------------------------------------------
+
+Paths for end point gpu/VM/Mram_M1.A (RAMB16_X0Y9.ADDRA11), 112 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     9.653ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gpu/VGA/row_7 (FF)
+  Destination:          gpu/VM/Mram_M1.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      9.535ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.812ns (1.774 - 2.586)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: gpu/VGA/row_7 to gpu/VM/Mram_M1.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y74.YQ      Tcko                  0.511   gpu/VGA/row<6>
+                                                       gpu/VGA/row_7
+    MULT18X18_X0Y9.A7    net (fanout=3)        1.317   gpu/VGA/row<7>
+    MULT18X18_X0Y9.P7    Tmult                 3.861   gpu/VM/Mmult_addr_mult0001
+                                                       gpu/VM/Mmult_addr_mult0001
+    SLICE_X3Y78.G1       net (fanout=1)        0.699   gpu/VM/addr_mult0001<7>
+    SLICE_X3Y78.COUT     Topcyg                0.871   gpu/VM/addr<6>
+                                                       gpu/VM/Madd_addr_lut<7>
+                                                       gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.COUT     Tbyp                  0.103   gpu/VM/addr<8>
+                                                       gpu/VM/Madd_addr_cy<8>
+                                                       gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.Y        Tciny                 0.756   gpu/VM/addr<10>
+                                                       gpu/VM/Madd_addr_cy<10>
+                                                       gpu/VM/Madd_addr_xor<11>
+    RAMB16_X0Y9.ADDRA11  net (fanout=2)        1.089   gpu/VM/addr<11>
+    RAMB16_X0Y9.CLKA     Tback                 0.328   gpu/VM/Mram_M1
+                                                       gpu/VM/Mram_M1.A
+    -------------------------------------------------  ---------------------------
+    Total                                      9.535ns (6.430ns logic, 3.105ns route)
+                                                       (67.4% logic, 32.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.674ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gpu/VGA/row_5 (FF)
+  Destination:          gpu/VM/Mram_M1.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      9.513ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.813ns (1.774 - 2.587)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: gpu/VGA/row_5 to gpu/VM/Mram_M1.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y73.YQ      Tcko                  0.511   gpu/VGA/row<4>
+                                                       gpu/VGA/row_5
+    MULT18X18_X0Y9.A5    net (fanout=3)        1.295   gpu/VGA/row<5>
+    MULT18X18_X0Y9.P7    Tmult                 3.861   gpu/VM/Mmult_addr_mult0001
+                                                       gpu/VM/Mmult_addr_mult0001
+    SLICE_X3Y78.G1       net (fanout=1)        0.699   gpu/VM/addr_mult0001<7>
+    SLICE_X3Y78.COUT     Topcyg                0.871   gpu/VM/addr<6>
+                                                       gpu/VM/Madd_addr_lut<7>
+                                                       gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.COUT     Tbyp                  0.103   gpu/VM/addr<8>
+                                                       gpu/VM/Madd_addr_cy<8>
+                                                       gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.Y        Tciny                 0.756   gpu/VM/addr<10>
+                                                       gpu/VM/Madd_addr_cy<10>
+                                                       gpu/VM/Madd_addr_xor<11>
+    RAMB16_X0Y9.ADDRA11  net (fanout=2)        1.089   gpu/VM/addr<11>
+    RAMB16_X0Y9.CLKA     Tback                 0.328   gpu/VM/Mram_M1
+                                                       gpu/VM/Mram_M1.A
+    -------------------------------------------------  ---------------------------
+    Total                                      9.513ns (6.430ns logic, 3.083ns route)
+                                                       (67.6% logic, 32.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.680ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gpu/VGA/row_6 (FF)
+  Destination:          gpu/VM/Mram_M1.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      9.508ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.812ns (1.774 - 2.586)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: gpu/VGA/row_6 to gpu/VM/Mram_M1.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y74.XQ      Tcko                  0.514   gpu/VGA/row<6>
+                                                       gpu/VGA/row_6
+    MULT18X18_X0Y9.A6    net (fanout=3)        1.287   gpu/VGA/row<6>
+    MULT18X18_X0Y9.P7    Tmult                 3.861   gpu/VM/Mmult_addr_mult0001
+                                                       gpu/VM/Mmult_addr_mult0001
+    SLICE_X3Y78.G1       net (fanout=1)        0.699   gpu/VM/addr_mult0001<7>
+    SLICE_X3Y78.COUT     Topcyg                0.871   gpu/VM/addr<6>
+                                                       gpu/VM/Madd_addr_lut<7>
+                                                       gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.COUT     Tbyp                  0.103   gpu/VM/addr<8>
+                                                       gpu/VM/Madd_addr_cy<8>
+                                                       gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.Y        Tciny                 0.756   gpu/VM/addr<10>
+                                                       gpu/VM/Madd_addr_cy<10>
+                                                       gpu/VM/Madd_addr_xor<11>
+    RAMB16_X0Y9.ADDRA11  net (fanout=2)        1.089   gpu/VM/addr<11>
+    RAMB16_X0Y9.CLKA     Tback                 0.328   gpu/VM/Mram_M1
+                                                       gpu/VM/Mram_M1.A
+    -------------------------------------------------  ---------------------------
+    Total                                      9.508ns (6.433ns logic, 3.075ns route)
+                                                       (67.7% logic, 32.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point gpu/VM/Mram_M1.A (RAMB16_X0Y9.ADDRA10), 104 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     9.783ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gpu/VGA/row_7 (FF)
+  Destination:          gpu/VM/Mram_M1.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      9.405ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.812ns (1.774 - 2.586)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: gpu/VGA/row_7 to gpu/VM/Mram_M1.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y74.YQ      Tcko                  0.511   gpu/VGA/row<6>
+                                                       gpu/VGA/row_7
+    MULT18X18_X0Y9.A7    net (fanout=3)        1.317   gpu/VGA/row<7>
+    MULT18X18_X0Y9.P7    Tmult                 3.861   gpu/VM/Mmult_addr_mult0001
+                                                       gpu/VM/Mmult_addr_mult0001
+    SLICE_X3Y78.G1       net (fanout=1)        0.699   gpu/VM/addr_mult0001<7>
+    SLICE_X3Y78.COUT     Topcyg                0.871   gpu/VM/addr<6>
+                                                       gpu/VM/Madd_addr_lut<7>
+                                                       gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.COUT     Tbyp                  0.103   gpu/VM/addr<8>
+                                                       gpu/VM/Madd_addr_cy<8>
+                                                       gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.X        Tcinx                 0.402   gpu/VM/addr<10>
+                                                       gpu/VM/Madd_addr_xor<10>
+    RAMB16_X0Y9.ADDRA10  net (fanout=2)        1.313   gpu/VM/addr<10>
+    RAMB16_X0Y9.CLKA     Tback                 0.328   gpu/VM/Mram_M1
+                                                       gpu/VM/Mram_M1.A
+    -------------------------------------------------  ---------------------------
+    Total                                      9.405ns (6.076ns logic, 3.329ns route)
+                                                       (64.6% logic, 35.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.804ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gpu/VGA/row_5 (FF)
+  Destination:          gpu/VM/Mram_M1.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      9.383ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.813ns (1.774 - 2.587)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: gpu/VGA/row_5 to gpu/VM/Mram_M1.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y73.YQ      Tcko                  0.511   gpu/VGA/row<4>
+                                                       gpu/VGA/row_5
+    MULT18X18_X0Y9.A5    net (fanout=3)        1.295   gpu/VGA/row<5>
+    MULT18X18_X0Y9.P7    Tmult                 3.861   gpu/VM/Mmult_addr_mult0001
+                                                       gpu/VM/Mmult_addr_mult0001
+    SLICE_X3Y78.G1       net (fanout=1)        0.699   gpu/VM/addr_mult0001<7>
+    SLICE_X3Y78.COUT     Topcyg                0.871   gpu/VM/addr<6>
+                                                       gpu/VM/Madd_addr_lut<7>
+                                                       gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.COUT     Tbyp                  0.103   gpu/VM/addr<8>
+                                                       gpu/VM/Madd_addr_cy<8>
+                                                       gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.X        Tcinx                 0.402   gpu/VM/addr<10>
+                                                       gpu/VM/Madd_addr_xor<10>
+    RAMB16_X0Y9.ADDRA10  net (fanout=2)        1.313   gpu/VM/addr<10>
+    RAMB16_X0Y9.CLKA     Tback                 0.328   gpu/VM/Mram_M1
+                                                       gpu/VM/Mram_M1.A
+    -------------------------------------------------  ---------------------------
+    Total                                      9.383ns (6.076ns logic, 3.307ns route)
+                                                       (64.8% logic, 35.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.810ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gpu/VGA/row_6 (FF)
+  Destination:          gpu/VM/Mram_M1.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      9.378ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.812ns (1.774 - 2.586)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: gpu/VGA/row_6 to gpu/VM/Mram_M1.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y74.XQ      Tcko                  0.514   gpu/VGA/row<6>
+                                                       gpu/VGA/row_6
+    MULT18X18_X0Y9.A6    net (fanout=3)        1.287   gpu/VGA/row<6>
+    MULT18X18_X0Y9.P7    Tmult                 3.861   gpu/VM/Mmult_addr_mult0001
+                                                       gpu/VM/Mmult_addr_mult0001
+    SLICE_X3Y78.G1       net (fanout=1)        0.699   gpu/VM/addr_mult0001<7>
+    SLICE_X3Y78.COUT     Topcyg                0.871   gpu/VM/addr<6>
+                                                       gpu/VM/Madd_addr_lut<7>
+                                                       gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.COUT     Tbyp                  0.103   gpu/VM/addr<8>
+                                                       gpu/VM/Madd_addr_cy<8>
+                                                       gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.X        Tcinx                 0.402   gpu/VM/addr<10>
+                                                       gpu/VM/Madd_addr_xor<10>
+    RAMB16_X0Y9.ADDRA10  net (fanout=2)        1.313   gpu/VM/addr<10>
+    RAMB16_X0Y9.CLKA     Tback                 0.328   gpu/VM/Mram_M1
+                                                       gpu/VM/Mram_M1.A
+    -------------------------------------------------  ---------------------------
+    Total                                      9.378ns (6.079ns logic, 3.299ns route)
+                                                       (64.8% logic, 35.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point gpu/VM/Mram_M1.A (RAMB16_X0Y9.ADDRA13), 128 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     9.900ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gpu/VGA/row_7 (FF)
+  Destination:          gpu/VM/Mram_M1.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      9.288ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.812ns (1.774 - 2.586)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: gpu/VGA/row_7 to gpu/VM/Mram_M1.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y74.YQ      Tcko                  0.511   gpu/VGA/row<6>
+                                                       gpu/VGA/row_7
+    MULT18X18_X0Y9.A7    net (fanout=3)        1.317   gpu/VGA/row<7>
+    MULT18X18_X0Y9.P7    Tmult                 3.861   gpu/VM/Mmult_addr_mult0001
+                                                       gpu/VM/Mmult_addr_mult0001
+    SLICE_X3Y78.G1       net (fanout=1)        0.699   gpu/VM/addr_mult0001<7>
+    SLICE_X3Y78.COUT     Topcyg                0.871   gpu/VM/addr<6>
+                                                       gpu/VM/Madd_addr_lut<7>
+                                                       gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.COUT     Tbyp                  0.103   gpu/VM/addr<8>
+                                                       gpu/VM/Madd_addr_cy<8>
+                                                       gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.COUT     Tbyp                  0.103   gpu/VM/addr<10>
+                                                       gpu/VM/Madd_addr_cy<10>
+                                                       gpu/VM/Madd_addr_cy<11>
+    SLICE_X3Y81.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<11>
+    SLICE_X3Y81.Y        Tciny                 0.756   gpu/VM/addr<12>
+                                                       gpu/VM/Madd_addr_cy<12>
+                                                       gpu/VM/Madd_addr_xor<13>
+    RAMB16_X0Y9.ADDRA13  net (fanout=1)        0.739   gpu/VM/addr<13>
+    RAMB16_X0Y9.CLKA     Tback                 0.328   gpu/VM/Mram_M1
+                                                       gpu/VM/Mram_M1.A
+    -------------------------------------------------  ---------------------------
+    Total                                      9.288ns (6.533ns logic, 2.755ns route)
+                                                       (70.3% logic, 29.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.919ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gpu/VGA/row_7 (FF)
+  Destination:          gpu/VM/Mram_M1.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      9.269ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.812ns (1.774 - 2.586)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: gpu/VGA/row_7 to gpu/VM/Mram_M1.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y74.YQ      Tcko                  0.511   gpu/VGA/row<6>
+                                                       gpu/VGA/row_7
+    MULT18X18_X0Y9.A7    net (fanout=3)        1.317   gpu/VGA/row<7>
+    MULT18X18_X0Y9.P10   Tmult                 4.091   gpu/VM/Mmult_addr_mult0001
+                                                       gpu/VM/Mmult_addr_mult0001
+    SLICE_X3Y80.F3       net (fanout=1)        0.516   gpu/VM/addr_mult0001<10>
+    SLICE_X3Y80.COUT     Topcyf                1.011   gpu/VM/addr<10>
+                                                       gpu/VM/addr_mult0001<10>_rt
+                                                       gpu/VM/Madd_addr_cy<10>
+                                                       gpu/VM/Madd_addr_cy<11>
+    SLICE_X3Y81.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<11>
+    SLICE_X3Y81.Y        Tciny                 0.756   gpu/VM/addr<12>
+                                                       gpu/VM/Madd_addr_cy<12>
+                                                       gpu/VM/Madd_addr_xor<13>
+    RAMB16_X0Y9.ADDRA13  net (fanout=1)        0.739   gpu/VM/addr<13>
+    RAMB16_X0Y9.CLKA     Tback                 0.328   gpu/VM/Mram_M1
+                                                       gpu/VM/Mram_M1.A
+    -------------------------------------------------  ---------------------------
+    Total                                      9.269ns (6.697ns logic, 2.572ns route)
+                                                       (72.3% logic, 27.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     9.921ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gpu/VGA/row_5 (FF)
+  Destination:          gpu/VM/Mram_M1.A (RAM)
+  Requirement:          20.000ns
+  Data Path Delay:      9.266ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.813ns (1.774 - 2.587)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: gpu/VGA/row_5 to gpu/VM/Mram_M1.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y73.YQ      Tcko                  0.511   gpu/VGA/row<4>
+                                                       gpu/VGA/row_5
+    MULT18X18_X0Y9.A5    net (fanout=3)        1.295   gpu/VGA/row<5>
+    MULT18X18_X0Y9.P7    Tmult                 3.861   gpu/VM/Mmult_addr_mult0001
+                                                       gpu/VM/Mmult_addr_mult0001
+    SLICE_X3Y78.G1       net (fanout=1)        0.699   gpu/VM/addr_mult0001<7>
+    SLICE_X3Y78.COUT     Topcyg                0.871   gpu/VM/addr<6>
+                                                       gpu/VM/Madd_addr_lut<7>
+                                                       gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<7>
+    SLICE_X3Y79.COUT     Tbyp                  0.103   gpu/VM/addr<8>
+                                                       gpu/VM/Madd_addr_cy<8>
+                                                       gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<9>
+    SLICE_X3Y80.COUT     Tbyp                  0.103   gpu/VM/addr<10>
+                                                       gpu/VM/Madd_addr_cy<10>
+                                                       gpu/VM/Madd_addr_cy<11>
+    SLICE_X3Y81.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<11>
+    SLICE_X3Y81.Y        Tciny                 0.756   gpu/VM/addr<12>
+                                                       gpu/VM/Madd_addr_cy<12>
+                                                       gpu/VM/Madd_addr_xor<13>
+    RAMB16_X0Y9.ADDRA13  net (fanout=1)        0.739   gpu/VM/addr<13>
+    RAMB16_X0Y9.CLKA     Tback                 0.328   gpu/VM/Mram_M1
+                                                       gpu/VM/Mram_M1.A
+    -------------------------------------------------  ---------------------------
+    Total                                      9.266ns (6.533ns logic, 2.733ns route)
+                                                       (70.5% logic, 29.5% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point gpu/VM/Mram_M4.A (RAMB16_X0Y8.ADDRA3), 12 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      2.712ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gpu/VGA/column_2 (FF)
+  Destination:          gpu/VM/Mram_M4.A (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      2.786ns (Levels of Logic = 1)
+  Clock Path Skew:      0.074ns (2.656 - 2.582)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 0.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: gpu/VGA/column_2 to gpu/VM/Mram_M4.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y84.XQ      Tcko                  0.411   gpu/VGA/column<2>
+                                                       gpu/VGA/column_2
+    SLICE_X3Y76.F4       net (fanout=4)        1.099   gpu/VGA/column<2>
+    SLICE_X3Y76.X        Topx                  0.738   gpu/VM/addr<2>
+                                                       gpu/VM/Madd_addr_lut<2>
+                                                       gpu/VM/Madd_addr_xor<2>
+    RAMB16_X0Y8.ADDRA3   net (fanout=2)        0.652   gpu/VM/addr<2>
+    RAMB16_X0Y8.CLKA     Tbcka       (-Th)     0.114   gpu/VM/Mram_M4
+                                                       gpu/VM/Mram_M4.A
+    -------------------------------------------------  ---------------------------
+    Total                                      2.786ns (1.035ns logic, 1.751ns route)
+                                                       (37.2% logic, 62.8% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      3.013ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gpu/VGA/column_1 (FF)
+  Destination:          gpu/VM/Mram_M4.A (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      3.087ns (Levels of Logic = 2)
+  Clock Path Skew:      0.074ns (2.656 - 2.582)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 0.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: gpu/VGA/column_1 to gpu/VM/Mram_M4.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y84.YQ      Tcko                  0.409   gpu/VGA/column<2>
+                                                       gpu/VGA/column_1
+    SLICE_X3Y75.G3       net (fanout=5)        1.121   gpu/VGA/column<1>
+    SLICE_X3Y75.COUT     Topcyg                0.697   gpu/VM/addr<0>
+                                                       gpu/VM/Madd_addr_lut<1>
+                                                       gpu/VM/Madd_addr_cy<1>
+    SLICE_X3Y76.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<1>
+    SLICE_X3Y76.X        Tcinx                 0.322   gpu/VM/addr<2>
+                                                       gpu/VM/Madd_addr_xor<2>
+    RAMB16_X0Y8.ADDRA3   net (fanout=2)        0.652   gpu/VM/addr<2>
+    RAMB16_X0Y8.CLKA     Tbcka       (-Th)     0.114   gpu/VM/Mram_M4
+                                                       gpu/VM/Mram_M4.A
+    -------------------------------------------------  ---------------------------
+    Total                                      3.087ns (1.314ns logic, 1.773ns route)
+                                                       (42.6% logic, 57.4% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      3.248ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gpu/VGA/column_0 (FF)
+  Destination:          gpu/VM/Mram_M4.A (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      3.316ns (Levels of Logic = 2)
+  Clock Path Skew:      0.068ns (2.656 - 2.588)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 0.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: gpu/VGA/column_0 to gpu/VM/Mram_M4.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y84.XQ      Tcko                  0.412   gpu/VGA/column<0>
+                                                       gpu/VGA/column_0
+    SLICE_X3Y75.F2       net (fanout=6)        1.235   gpu/VGA/column<0>
+    SLICE_X3Y75.COUT     Topcyf                0.809   gpu/VM/addr<0>
+                                                       gpu/VM/Madd_addr_lut<0>
+                                                       gpu/VM/Madd_addr_cy<0>
+                                                       gpu/VM/Madd_addr_cy<1>
+    SLICE_X3Y76.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<1>
+    SLICE_X3Y76.X        Tcinx                 0.322   gpu/VM/addr<2>
+                                                       gpu/VM/Madd_addr_xor<2>
+    RAMB16_X0Y8.ADDRA3   net (fanout=2)        0.652   gpu/VM/addr<2>
+    RAMB16_X0Y8.CLKA     Tbcka       (-Th)     0.114   gpu/VM/Mram_M4
+                                                       gpu/VM/Mram_M4.A
+    -------------------------------------------------  ---------------------------
+    Total                                      3.316ns (1.429ns logic, 1.887ns route)
+                                                       (43.1% logic, 56.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point gpu/VM/Mram_M4.A (RAMB16_X0Y8.ADDRA8), 72 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      2.720ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gpu/VGA/column_7 (FF)
+  Destination:          gpu/VM/Mram_M4.A (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      2.793ns (Levels of Logic = 1)
+  Clock Path Skew:      0.073ns (2.656 - 2.583)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 0.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: gpu/VGA/column_7 to gpu/VM/Mram_M4.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y87.XQ      Tcko                  0.411   gpu/VGA/column<7>
+                                                       gpu/VGA/column_7
+    SLICE_X3Y78.G4       net (fanout=3)        1.049   gpu/VGA/column<7>
+    SLICE_X3Y78.Y        Topgy                 0.856   gpu/VM/addr<6>
+                                                       gpu/VM/Madd_addr_lut<7>
+                                                       gpu/VM/Madd_addr_xor<7>
+    RAMB16_X0Y8.ADDRA8   net (fanout=2)        0.591   gpu/VM/addr<7>
+    RAMB16_X0Y8.CLKA     Tbcka       (-Th)     0.114   gpu/VM/Mram_M4
+                                                       gpu/VM/Mram_M4.A
+    -------------------------------------------------  ---------------------------
+    Total                                      2.793ns (1.153ns logic, 1.640ns route)
+                                                       (41.3% logic, 58.7% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      3.094ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gpu/VGA/column_6 (FF)
+  Destination:          gpu/VM/Mram_M4.A (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      3.167ns (Levels of Logic = 1)
+  Clock Path Skew:      0.073ns (2.656 - 2.583)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 0.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: gpu/VGA/column_6 to gpu/VM/Mram_M4.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y86.XQ      Tcko                  0.412   gpu/VGA/column<6>
+                                                       gpu/VGA/column_6
+    SLICE_X3Y78.F1       net (fanout=4)        1.136   gpu/VGA/column<6>
+    SLICE_X3Y78.Y        Topy                  1.142   gpu/VM/addr<6>
+                                                       gpu/VM/Madd_addr_lut<6>
+                                                       gpu/VM/Madd_addr_cy<6>
+                                                       gpu/VM/Madd_addr_xor<7>
+    RAMB16_X0Y8.ADDRA8   net (fanout=2)        0.591   gpu/VM/addr<7>
+    RAMB16_X0Y8.CLKA     Tbcka       (-Th)     0.114   gpu/VM/Mram_M4
+                                                       gpu/VM/Mram_M4.A
+    -------------------------------------------------  ---------------------------
+    Total                                      3.167ns (1.440ns logic, 1.727ns route)
+                                                       (45.5% logic, 54.5% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      3.247ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gpu/VGA/column_3 (FF)
+  Destination:          gpu/VM/Mram_M4.A (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      3.322ns (Levels of Logic = 3)
+  Clock Path Skew:      0.075ns (2.656 - 2.581)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 0.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: gpu/VGA/column_3 to gpu/VM/Mram_M4.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y84.XQ      Tcko                  0.412   gpu/VGA/column<3>
+                                                       gpu/VGA/column_3
+    SLICE_X3Y76.G4       net (fanout=3)        1.049   gpu/VGA/column<3>
+    SLICE_X3Y76.COUT     Topcyg                0.697   gpu/VM/addr<2>
+                                                       gpu/VM/Madd_addr_lut<3>
+                                                       gpu/VM/Madd_addr_cy<3>
+    SLICE_X3Y77.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<3>
+    SLICE_X3Y77.COUT     Tbyp                  0.082   gpu/VM/addr<4>
+                                                       gpu/VM/Madd_addr_cy<4>
+                                                       gpu/VM/Madd_addr_cy<5>
+    SLICE_X3Y78.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<5>
+    SLICE_X3Y78.Y        Tciny                 0.605   gpu/VM/addr<6>
+                                                       gpu/VM/Madd_addr_cy<6>
+                                                       gpu/VM/Madd_addr_xor<7>
+    RAMB16_X0Y8.ADDRA8   net (fanout=2)        0.591   gpu/VM/addr<7>
+    RAMB16_X0Y8.CLKA     Tbcka       (-Th)     0.114   gpu/VM/Mram_M4
+                                                       gpu/VM/Mram_M4.A
+    -------------------------------------------------  ---------------------------
+    Total                                      3.322ns (1.682ns logic, 1.640ns route)
+                                                       (50.6% logic, 49.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point gpu/VM/Mram_M4.A (RAMB16_X0Y8.ADDRA7), 56 paths
+--------------------------------------------------------------------------------
+Slack (hold path):      2.751ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gpu/VGA/column_6 (FF)
+  Destination:          gpu/VM/Mram_M4.A (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      2.824ns (Levels of Logic = 1)
+  Clock Path Skew:      0.073ns (2.656 - 2.583)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 0.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: gpu/VGA/column_6 to gpu/VM/Mram_M4.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y86.XQ      Tcko                  0.412   gpu/VGA/column<6>
+                                                       gpu/VGA/column_6
+    SLICE_X3Y78.F1       net (fanout=4)        1.136   gpu/VGA/column<6>
+    SLICE_X3Y78.X        Topx                  0.738   gpu/VM/addr<6>
+                                                       gpu/VM/Madd_addr_lut<6>
+                                                       gpu/VM/Madd_addr_xor<6>
+    RAMB16_X0Y8.ADDRA7   net (fanout=2)        0.652   gpu/VM/addr<6>
+    RAMB16_X0Y8.CLKA     Tbcka       (-Th)     0.114   gpu/VM/Mram_M4
+                                                       gpu/VM/Mram_M4.A
+    -------------------------------------------------  ---------------------------
+    Total                                      2.824ns (1.036ns logic, 1.788ns route)
+                                                       (36.7% logic, 63.3% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      3.025ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gpu/VGA/column_3 (FF)
+  Destination:          gpu/VM/Mram_M4.A (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      3.100ns (Levels of Logic = 3)
+  Clock Path Skew:      0.075ns (2.656 - 2.581)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 0.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: gpu/VGA/column_3 to gpu/VM/Mram_M4.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y84.XQ      Tcko                  0.412   gpu/VGA/column<3>
+                                                       gpu/VGA/column_3
+    SLICE_X3Y76.G4       net (fanout=3)        1.049   gpu/VGA/column<3>
+    SLICE_X3Y76.COUT     Topcyg                0.697   gpu/VM/addr<2>
+                                                       gpu/VM/Madd_addr_lut<3>
+                                                       gpu/VM/Madd_addr_cy<3>
+    SLICE_X3Y77.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<3>
+    SLICE_X3Y77.COUT     Tbyp                  0.082   gpu/VM/addr<4>
+                                                       gpu/VM/Madd_addr_cy<4>
+                                                       gpu/VM/Madd_addr_cy<5>
+    SLICE_X3Y78.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<5>
+    SLICE_X3Y78.X        Tcinx                 0.322   gpu/VM/addr<6>
+                                                       gpu/VM/Madd_addr_xor<6>
+    RAMB16_X0Y8.ADDRA7   net (fanout=2)        0.652   gpu/VM/addr<6>
+    RAMB16_X0Y8.CLKA     Tbcka       (-Th)     0.114   gpu/VM/Mram_M4
+                                                       gpu/VM/Mram_M4.A
+    -------------------------------------------------  ---------------------------
+    Total                                      3.100ns (1.399ns logic, 1.701ns route)
+                                                       (45.1% logic, 54.9% route)
+
+--------------------------------------------------------------------------------
+Slack (hold path):      3.078ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gpu/VGA/column_5 (FF)
+  Destination:          gpu/VM/Mram_M4.A (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      3.151ns (Levels of Logic = 2)
+  Clock Path Skew:      0.073ns (2.656 - 2.583)
+  Source Clock:         gpu/vga_clk rising at 0.000ns
+  Destination Clock:    clk_IBUFG rising at 0.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: gpu/VGA/column_5 to gpu/VM/Mram_M4.A
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y87.YQ      Tcko                  0.409   gpu/VGA/column<7>
+                                                       gpu/VGA/column_5
+    SLICE_X3Y77.G3       net (fanout=4)        1.185   gpu/VGA/column<5>
+    SLICE_X3Y77.COUT     Topcyg                0.697   gpu/VM/addr<4>
+                                                       gpu/VM/Madd_addr_lut<5>
+                                                       gpu/VM/Madd_addr_cy<5>
+    SLICE_X3Y78.CIN      net (fanout=1)        0.000   gpu/VM/Madd_addr_cy<5>
+    SLICE_X3Y78.X        Tcinx                 0.322   gpu/VM/addr<6>
+                                                       gpu/VM/Madd_addr_xor<6>
+    RAMB16_X0Y8.ADDRA7   net (fanout=2)        0.652   gpu/VM/addr<6>
+    RAMB16_X0Y8.CLKA     Tbcka       (-Th)     0.114   gpu/VM/Mram_M4
+                                                       gpu/VM/Mram_M4.A
+    -------------------------------------------------  ---------------------------
+    Total                                      3.151ns (1.314ns logic, 1.837ns route)
+                                                       (41.7% logic, 58.3% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 14.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 3.000ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: gpu/vga_clock_dcm/CLKIN
+  Logical resource: gpu/vga_clock_dcm/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: clk_IBUFG
+--------------------------------------------------------------------------------
+Slack: 14.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 3.000ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: gpu/vga_clock_dcm/CLKIN
+  Logical resource: gpu/vga_clock_dcm/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: clk_IBUFG
+--------------------------------------------------------------------------------
+Slack: 16.365ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 3.635ns (275.103MHz) (Tdcmpc)
+  Physical resource: gpu/vga_clock_dcm/CLKIN
+  Logical resource: gpu/vga_clock_dcm/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: clk_IBUFG
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_gpu_vga_clk1 = PERIOD TIMEGRP "gpu_vga_clk1" 
+TS_sys_clk_pin / 0.5 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1711 paths analyzed, 155 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   8.683ns.
+--------------------------------------------------------------------------------
+
+Paths for end point gpu/VGA/pixel_0 (SLICE_X3Y83.G2), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     15.797ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               inst_LPM_FF (FF)
+  Destination:          gpu/VGA/pixel_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.203ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_IBUFG rising at 20.000ns
+  Destination Clock:    gpu/vga_clk rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: inst_LPM_FF to gpu/VGA/pixel_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y82.XQ       Tcko                  0.514   inst_LPM_FF
+                                                       inst_LPM_FF
+    SLICE_X3Y83.G2       net (fanout=1)        2.961   inst_LPM_FF
+    SLICE_X3Y83.CLK      Tgck                  0.728   gpu/VGA/pixel<1>
+                                                       inst_LPM_MUX11
+                                                       gpu/VGA/pixel_0
+    -------------------------------------------------  ---------------------------
+    Total                                      4.203ns (1.242ns logic, 2.961ns route)
+                                                       (29.6% logic, 70.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point gpu/VGA/pixel_0 (SLICE_X3Y83.G4), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     16.198ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gpu/VM/Mram_M4.A (RAM)
+  Destination:          gpu/VGA/pixel_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.766ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.036ns (2.620 - 2.656)
+  Source Clock:         clk_IBUFG rising at 20.000ns
+  Destination Clock:    gpu/vga_clk rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: gpu/VM/Mram_M4.A to gpu/VGA/pixel_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB16_X0Y8.DOA0     Tbcko                 2.446   gpu/VM/Mram_M4
+                                                       gpu/VM/Mram_M4.A
+    SLICE_X3Y83.G4       net (fanout=1)        0.592   N10
+    SLICE_X3Y83.CLK      Tgck                  0.728   gpu/VGA/pixel<1>
+                                                       inst_LPM_MUX11
+                                                       gpu/VGA/pixel_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.766ns (3.174ns logic, 0.592ns route)
+                                                       (84.3% logic, 15.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point gpu/VGA/pixel_0 (SLICE_X3Y83.G3), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     16.294ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               gpu/VM/Mram_M1.A (RAM)
+  Destination:          gpu/VGA/pixel_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.706ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_IBUFG rising at 20.000ns
+  Destination Clock:    gpu/vga_clk rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: gpu/VM/Mram_M1.A to gpu/VGA/pixel_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    RAMB16_X0Y9.DOA0     Tbcko                 2.446   gpu/VM/Mram_M1
+                                                       gpu/VM/Mram_M1.A
+    SLICE_X3Y83.G3       net (fanout=1)        0.532   N4
+    SLICE_X3Y83.CLK      Tgck                  0.728   gpu/VGA/pixel<1>
+                                                       inst_LPM_MUX11
+                                                       gpu/VGA/pixel_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.706ns (3.174ns logic, 0.532ns route)
+                                                       (85.6% logic, 14.4% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_gpu_vga_clk1 = PERIOD TIMEGRP "gpu_vga_clk1" TS_sys_clk_pin / 0.5 HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point gpu/VGA/column_7 (SLICE_X19Y87.F4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.191ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gpu/VGA/column_7 (FF)
+  Destination:          gpu/VGA/column_7 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.191ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         gpu/vga_clk rising at 40.000ns
+  Destination Clock:    gpu/vga_clk rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: gpu/VGA/column_7 to gpu/VGA/column_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y87.XQ      Tcko                  0.411   gpu/VGA/column<7>
+                                                       gpu/VGA/column_7
+    SLICE_X19Y87.F4      net (fanout=3)        0.332   gpu/VGA/column<7>
+    SLICE_X19Y87.CLK     Tckf        (-Th)    -0.448   gpu/VGA/column<7>
+                                                       gpu/VGA/column_mux0000<7>1
+                                                       gpu/VGA/column_7
+    -------------------------------------------------  ---------------------------
+    Total                                      1.191ns (0.859ns logic, 0.332ns route)
+                                                       (72.1% logic, 27.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point gpu/VGA/column_5 (SLICE_X19Y87.G2), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.196ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gpu/VGA/column_4 (FF)
+  Destination:          gpu/VGA/column_5 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.198ns (Levels of Logic = 1)
+  Clock Path Skew:      0.002ns (0.012 - 0.010)
+  Source Clock:         gpu/vga_clk rising at 40.000ns
+  Destination Clock:    gpu/vga_clk rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: gpu/VGA/column_4 to gpu/VGA/column_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y85.XQ      Tcko                  0.412   gpu/VGA/column<4>
+                                                       gpu/VGA/column_4
+    SLICE_X19Y87.G2      net (fanout=4)        0.338   gpu/VGA/column<4>
+    SLICE_X19Y87.CLK     Tckg        (-Th)    -0.448   gpu/VGA/column<7>
+                                                       gpu/VGA/column_mux0000<5>1
+                                                       gpu/VGA/column_5
+    -------------------------------------------------  ---------------------------
+    Total                                      1.198ns (0.860ns logic, 0.338ns route)
+                                                       (71.8% logic, 28.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point gpu/VGA/column_2 (SLICE_X17Y84.F3), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.205ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               gpu/VGA/column_1 (FF)
+  Destination:          gpu/VGA/column_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.205ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         gpu/vga_clk rising at 40.000ns
+  Destination Clock:    gpu/vga_clk rising at 40.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: gpu/VGA/column_1 to gpu/VGA/column_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y84.YQ      Tcko                  0.409   gpu/VGA/column<2>
+                                                       gpu/VGA/column_1
+    SLICE_X17Y84.F3      net (fanout=5)        0.348   gpu/VGA/column<1>
+    SLICE_X17Y84.CLK     Tckf        (-Th)    -0.448   gpu/VGA/column<2>
+                                                       gpu/VGA/column_mux0000<2>1
+                                                       gpu/VGA/column_2
+    -------------------------------------------------  ---------------------------
+    Total                                      1.205ns (0.857ns logic, 0.348ns route)
+                                                       (71.1% logic, 28.9% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_gpu_vga_clk1 = PERIOD TIMEGRP "gpu_vga_clk1" TS_sys_clk_pin / 0.5 HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 38.562ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 40.000ns
+  Low pulse: 20.000ns
+  Low pulse limit: 0.719ns (Tcl)
+  Physical resource: gpu/VGA/column<3>/CLK
+  Logical resource: gpu/VGA/column_3/CK
+  Location pin: SLICE_X18Y84.CLK
+  Clock network: gpu/vga_clk
+--------------------------------------------------------------------------------
+Slack: 38.562ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 40.000ns
+  High pulse: 20.000ns
+  High pulse limit: 0.719ns (Tch)
+  Physical resource: gpu/VGA/column<3>/CLK
+  Logical resource: gpu/VGA/column_3/CK
+  Location pin: SLICE_X18Y84.CLK
+  Clock network: gpu/vga_clk
+--------------------------------------------------------------------------------
+Slack: 38.562ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 40.000ns
+  Low pulse: 20.000ns
+  Low pulse limit: 0.719ns (Tcl)
+  Physical resource: gpu/VGA/hsync/CLK
+  Logical resource: gpu/VGA/hsync/CK
+  Location pin: SLICE_X6Y90.CLK
+  Clock network: gpu/vga_clk
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_sys_clk_pin
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_sys_clk_pin                 |     20.000ns|     10.347ns|      4.341ns|            0|            0|         1784|         1711|
+| TS_gpu_vga_clk1               |     40.000ns|      8.683ns|          N/A|            0|            0|         1711|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |   10.347|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 3495 paths, 0 nets, and 315 connections
+
+Design statistics:
+   Minimum period:  10.347ns{1}   (Maximum frequency:  96.646MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sun Sep 25 22:28:25 2016 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 119 MB
+
+
+

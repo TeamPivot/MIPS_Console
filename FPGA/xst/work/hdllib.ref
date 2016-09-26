@@ -1,0 +1,11 @@
+MO ControlUnit NULL ControlUnit.v vlg71/_control_unit.bin 1474864079
+MO CPU NULL CPU.v vlg70/_c_p_u.bin 1474864079
+MO VideoMemory NULL VideoMemory.v vlg68/_video_memory.bin 1474864079
+MO VGA NULL VGA.v vlg0A/_v_g_a.bin 1474864079
+MO Flags NULL Flags.v vlg11/_flags.bin 1474864079
+MO DataMemory NULL DataMemory.v vlg2B/_data_memory.bin 1474864079
+MO InstructionMemory NULL InstructionMemory.v vlg63/_instruction_memory.bin 1474864079
+MO GPU NULL VideoUnit.v vlg54/_g_p_u.bin 1474864079
+MO Main NULL Main.v vlg0D/_main.bin 1474864079
+MO RegisterFile NULL RegisterFile.v vlg69/_register_file.bin 1474864079
+MO ALU NULL ALU.v vlg2A/_a_l_u.bin 1474864079

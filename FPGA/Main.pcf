@@ -1,0 +1,31 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sun Sep 25 22:28:11 2016
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "B8" LEVEL 1;
+COMP "stopped" LOCATE = SITE "T13" LEVEL 1;
+COMP "start" LOCATE = SITE "R11" LEVEL 1;
+COMP "stopped_led" LOCATE = SITE "C11" LEVEL 1;
+PIN gpu/vga_clock_dcm_pins<1> = BEL "gpu/vga_clock_dcm" PINNAME CLKIN;
+TIMEGRP sys_clk_pin = BEL "gpu/VM/Mram_M1.A" BEL "gpu/VM/Mram_M4.A" BEL
+        "inst_LPM_FF" PIN "gpu/vga_clock_dcm_pins<1>";
+TIMEGRP gpu_vga_clk1 = BEL "gpu/VGA/row_7" BEL "gpu/VGA/row_6" BEL
+        "gpu/VGA/row_5" BEL "gpu/VGA/row_4" BEL "gpu/VGA/row_3" BEL
+        "gpu/VGA/row_2" BEL "gpu/VGA/row_1" BEL "gpu/VGA/row_0" BEL
+        "gpu/VGA/vcount_9" BEL "gpu/VGA/vcount_8" BEL "gpu/VGA/vcount_7" BEL
+        "gpu/VGA/vcount_6" BEL "gpu/VGA/vcount_5" BEL "gpu/VGA/vcount_4" BEL
+        "gpu/VGA/vcount_3" BEL "gpu/VGA/vcount_2" BEL "gpu/VGA/vcount_1" BEL
+        "gpu/VGA/vcount_0" BEL "gpu/VGA/hcount_9" BEL "gpu/VGA/hcount_8" BEL
+        "gpu/VGA/hcount_7" BEL "gpu/VGA/hcount_6" BEL "gpu/VGA/hcount_5" BEL
+        "gpu/VGA/hcount_4" BEL "gpu/VGA/hcount_3" BEL "gpu/VGA/hcount_2" BEL
+        "gpu/VGA/hcount_1" BEL "gpu/VGA/hcount_0" BEL "gpu/VGA/column_7" BEL
+        "gpu/VGA/column_6" BEL "gpu/VGA/column_5" BEL "gpu/VGA/column_4" BEL
+        "gpu/VGA/column_3" BEL "gpu/VGA/column_2" BEL "gpu/VGA/column_1" BEL
+        "gpu/VGA/column_0" BEL "gpu/VGA/pixel_1" BEL "gpu/VGA/pixel_0" BEL
+        "gpu/VGA/hsync" BEL "gpu/VGA/vsync" BEL "gpu/vga_clk_BUFG.GCLKMUX" BEL
+        "gpu/vga_clk_BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 20 ns HIGH 50%;
+TS_gpu_vga_clk1 = PERIOD TIMEGRP "gpu_vga_clk1" TS_sys_clk_pin / 0.5 HIGH 50%;
+SCHEMATIC END;
+
